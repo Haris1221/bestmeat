@@ -18,10 +18,214 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: grey;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 46%;
+}
+
+.cart {
+  width: 40px;
+  cursor: pointer;
+}
+.se {
+  width: 90%;
+  border: none
+}
+.searchimg {
+  width: 40px;
+}
+.logo {
+  width: 110px;
+}
+.input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 50px;
+}
+.searchdiv {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 100%;
+}
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 20px;
+}
+p{
+  cursor: pointer;
+  font-size: 20px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+}
+.left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background-color: white;
+  color: black;
+  width: 50%;
+  height: auto;
+}
+.right {
+  background-color: red;
+  width: 50%;
+  height: auto;
+}
+.section2 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15%;
+  margin-top: 100px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  width: 100%;
+  height: 700px;
+  gap: 40px;
+}
+
+.lleft {
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  width: 50%;
+  justify-content: flex-start;
+  gap: 15px;
+
+}
+.rright {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 15px;
+} 
+.bigbox {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 40px;
+  background-color: white;
+  width: 100%;
+  height: 70%;
+  cursor: pointer;
+}
+.bigbox:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+.smallbox:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+.smallcontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 210px;
+  gap: 10px;
+}
+.smallbox {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  border: 1px solid grey;
+  border-radius: 40px;
+  background-color: black;
+  cursor: pointer;
+}
+h1 {
+  font-size: 30px;
+}
+.container2 {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+
+}
+.featured {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-top: 60px;
+
+}
+.wrapdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1350px;
+  gap: 80px;
+  margin: 50px;
+}
+.wraps {
+  display: flex;
+  width: 500px;
+  height: 130px;
+  background-color: black;
+}
+.footer {
+  display: flex;
+  margin-top: 50px;
+  background-color: grey;
+  height: 200px;
+}
+.split {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 21%;
+  gap: 20px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+.pic {
+  width: 90px;
+}
+.navlinks2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  gap: 40px;
+}
+.tag {
+  font-size: 20px;
+}
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.soc {
+  width: 40px;
+  cursor: pointer;
 }
