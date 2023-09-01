@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'next/link'
+'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import logo from '../../public/images/logo.png'
 import cart from '../../public/images/cart.png'
@@ -9,18 +9,31 @@ import insta from '../../public/images/insta.jpeg'
 import twit from '../../public/images/twit.png'
 import face from '../../public/images/face.png'
 import mail from '../../public/images/mail.png'
+import util from '../../page/api/users/index'
+
+
 
 export default function page() {
+    const [user, setUser] = useState({});
+
+    useEffect(()=> {
+      async function fetch(){
+          const user1 = await util.getUser()
+          setUser(user1)
+      }fetch();
+    },[])
+
     return (
         <div className='main'>
             <div className='nav'>
                 <div className='logodiv'>
-                    <Image className='logo' src={logo}></Image>
+                    <p>{user.email}</p>
+                    <Image className='logo' src={logo} alt=''></Image>
                 </div>
                 <div className='input'>
-                    <Image className='cart' src={cart}></Image>
+                    <Image className='cart' src={cart} alt=''></Image>
                     <div className='searchdiv'>
-                        <Image  className='searchimg' src={search}></Image>
+                        <Image  className='searchimg' src={search} alt=''></Image>
                         <input className='se' placeholder='Search'></input>
                     </div>
                 </div>
@@ -32,7 +45,7 @@ export default function page() {
             </div>
             <div className='header'>
                 <div className='left'>WE PRODUCE HALAL MEAT</div>
-                <Image src={header} className='right'></Image>
+                <Image src={header} className='right' alt=''></Image>
             </div>
             <div className='section2'>
                 <h1>Recommended</h1>
@@ -70,7 +83,7 @@ export default function page() {
                 <div className='footer'>
                     <div className='split'>
                         <div className='info'>
-                            <Image className='pic' src={logo}></Image>
+                            <Image className='pic' src={logo} alt=''></Image>
                         <div className='navlinks2'>
                             <p className='tag'>Home</p>
                             <p className='tag'>Shop</p>
@@ -78,10 +91,10 @@ export default function page() {
                         </div>
                     </div>
                         <div className='socials'>
-                            <Image src={insta} className='soc'></Image>
-                            <Image src={twit} className='soc'></Image>
-                            <Image src={face} className='soc'></Image>
-                            <Image src={mail} className='soc'></Image>
+                            <Image src={insta} className='soc' alt=''></Image>
+                            <Image src={twit} className='soc' alt=''></Image>
+                            <Image src={face} className='soc' alt=''></Image>
+                            <Image src={mail} className='soc' alt=''></Image>
                         </div>
                     </div>
                 </div>

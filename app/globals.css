@@ -228,4 +228,34 @@ h1 {
 .soc {
   width: 40px;
   cursor: pointer;
+  background-color: black;
+}
+.mainlogin {
+  display: flex;
+  justify-content: center;
+}
+.formdiv{
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  border: 1px solid blue;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  padding: 60px;
+  background-color: grey;
+  border-radius: 7px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.click{
+  background-color: blue;
+  width: 100px;
+}
+.PDM {
+  display: none;
 }
