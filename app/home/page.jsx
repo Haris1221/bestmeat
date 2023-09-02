@@ -9,25 +9,52 @@ import insta from '../../public/images/insta.jpeg'
 import twit from '../../public/images/twit.png'
 import face from '../../public/images/face.png'
 import mail from '../../public/images/mail.png'
+import beef from '../../public/images/beef.png'
 import util from '../../page/api/users/index'
+import api from '../../page/api/api/index';
+
 
 
 
 export default function page() {
     const [user, setUser] = useState({});
+    const [meatData, setMeatData] = useState([])
+    const [meatobj, setMeatObj] = useState({
+        lamb:{},
+        sheep:{},
+        cow:{},
+        beef:{},
+        lampChop:{},
+        steak:{},
+        chicken:{},
+        wings:{}
+    })
+
+
 
     useEffect(()=> {
-      async function fetch(){
-          const user1 = await util.getUser()
-          setUser(user1)
-      }fetch();
+        async function fetch(){
+            const user1 = await util.getUser()
+            setUser(user1)
+        }fetch();
     },[])
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await api.meat();
+            setMeatData(data);
+            setMeatObj({...meatobj,lamb:{...data[0]}, sheep:{...data[1]}, cow:{...data[2]}, beef:{...data[3]}, lampChop:{...data[4]}, steak:{...data[5]}, chicken:{...data[6]}, wings:{...data[7]}})
+        
+        }
+    
+        fetchData();
+        }, []);
+    
 
     return (
         <div className='main'>
             <div className='nav'>
                 <div className='logodiv'>
-                    <p>{user.email}</p>
                     <Image className='logo' src={logo} alt=''></Image>
                 </div>
                 <div className='input'>
@@ -51,10 +78,15 @@ export default function page() {
                 <h1>Recommended</h1>
                 <div className='container'>
                     <div className='lleft'>
-                        <div className='bigbox'></div>
+                        <div className='bigbox text-black'>{meatobj.lamb.name} </div>
                         <div className='smallcontainer'>
-                            <div className='smallbox'></div>
-                            <div className='smallbox'></div>
+                            <div className='smallbox'>
+                                {meatobj.beef.name}
+                                {meatobj.beef.price}
+                                <Image src={beef}></Image>
+
+                                </div>
+                            <div className='smallbox'>{meatobj.lampChop.name}</div>
                         </div>
                     </div>
                     <div className='rright'>

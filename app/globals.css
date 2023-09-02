@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: grey;
+  background-color: black;
 }
 .nav{
   display: flex;
@@ -30,6 +30,7 @@ body {
 .cart {
   width: 40px;
   cursor: pointer;
+  background-color: white;
 }
 .se {
   width: 90%;
@@ -187,7 +188,7 @@ h1 {
 .footer {
   display: flex;
   margin-top: 50px;
-  background-color: grey;
+  background-color: black;
   height: 200px;
 }
 .split {
