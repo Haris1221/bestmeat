@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: black;
+  background: linear-gradient(black,rgb(10, 10, 79));
 }
 .nav{
   display: flex;
@@ -30,7 +30,6 @@ body {
 .cart {
   width: 40px;
   cursor: pointer;
-  background-color: white;
 }
 .se {
   width: 90%;
@@ -72,6 +71,7 @@ p{
 .header {
   display: flex;
   flex-direction: row;
+  height: 500px;
 }
 .left{
   display: flex;
@@ -120,20 +120,40 @@ p{
 } 
 .bigbox {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid grey;
   border-radius: 40px;
   background-color: white;
   width: 100%;
   height: 70%;
   cursor: pointer;
+  gap: 30px;
 }
+.price {
+  color: rgba(0, 0, 0, 0)
+}
+
+
 .bigbox:hover {
   transform: scale(1.02);
   opacity: 0.8;
+  .price{
+    color: black;
+  }
+}
+.price2{
+  color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
 }
 .smallbox:hover {
   transform: scale(1.02);
   opacity: 0.8;
+  .price2{
+    color: white;
+  }
 }
 .smallcontainer {
   display: flex;
@@ -144,13 +164,23 @@ p{
 }
 .smallbox {
   display: flex;
+  flex-direction: column;
   width: 50%;
   height: 100%;
   border: 1px solid grey;
   border-radius: 40px;
   background-color: black;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
 }
+.small{
+  width: 70%;
+  height: auto;
+}
+
 h1 {
   font-size: 30px;
 }
@@ -187,14 +217,15 @@ h1 {
 }
 .footer {
   display: flex;
-  margin-top: 50px;
-  background-color: black;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.646);
   height: 200px;
 }
 .split {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   padding: 0 21%;
   gap: 20px;
 }
@@ -229,7 +260,6 @@ h1 {
 .soc {
   width: 40px;
   cursor: pointer;
-  background-color: black;
 }
 .mainlogin {
   display: flex;

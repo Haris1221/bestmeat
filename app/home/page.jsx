@@ -5,11 +5,16 @@ import logo from '../../public/images/logo.png'
 import cart from '../../public/images/cart.png'
 import search from '../../public/images/search.png'
 import header from '../../public/images/header.png'
-import insta from '../../public/images/insta.jpeg'
+import insta from '../../public/images/insta.png'
 import twit from '../../public/images/twit.png'
 import face from '../../public/images/face.png'
 import mail from '../../public/images/mail.png'
 import beef from '../../public/images/beef.png'
+import lamb from '../../public/images/lamb.png'
+import lambChop from '../../public/images/lambChop.png'
+import steak from '../../public/images/steak.png'
+import chicken from '../../public/images/chicken.png'
+import wings from '../../public/images/wings.png'
 import util from '../../page/api/users/index'
 import api from '../../page/api/api/index';
 
@@ -23,11 +28,11 @@ export default function page() {
         lamb:{},
         sheep:{},
         cow:{},
-        beef:{},
         lampChop:{},
         steak:{},
         chicken:{},
-        wings:{}
+        wings:{},
+        beef:{},
     })
 
 
@@ -43,7 +48,7 @@ export default function page() {
         async function fetchData() {
             const data = await api.meat();
             setMeatData(data);
-            setMeatObj({...meatobj,lamb:{...data[0]}, sheep:{...data[1]}, cow:{...data[2]}, beef:{...data[3]}, lampChop:{...data[4]}, steak:{...data[5]}, chicken:{...data[6]}, wings:{...data[7]}})
+            setMeatObj({...meatobj,lamb:{...data[0]}, sheep:{...data[1]}, cow:{...data[2]}, beef:{...data[7]}, lampChop:{...data[3]}, steak:{...data[4]}, chicken:{...data[5]}, wings:{...data[6]}})
         
         }
     
@@ -78,23 +83,54 @@ export default function page() {
                 <h1>Recommended</h1>
                 <div className='container'>
                     <div className='lleft'>
-                        <div className='bigbox text-black'>{meatobj.lamb.name} </div>
+                        <div className='bigbox'>
+                            <Image className='lamb' src={lamb}></Image>
+                            <div className='price'>
+                            {meatobj.lamb.name}: &nbsp;
+                            CAD${meatobj.lamb.price}
+                            </div>
+                            </div>
                         <div className='smallcontainer'>
                             <div className='smallbox'>
-                                {meatobj.beef.name}
-                                {meatobj.beef.price}
-                                <Image src={beef}></Image>
-
+                                <Image className='small' src={beef}></Image>
+                                <div className='price2'>
+                                {meatobj.beef.name}: &nbsp;
+                                CAD${meatobj.beef.price}
                                 </div>
-                            <div className='smallbox'>{meatobj.lampChop.name}</div>
+                                </div>
+                            <div className='smallbox'>
+                                <Image className='small' src={lambChop}></Image>
+                                <div className='price2'>
+                                {meatobj.lampChop.name}: &nbsp;
+                                CAD${meatobj.lampChop.price}
+                                </div>
+                                </div>
                         </div>
                     </div>
                     <div className='rright'>
                     <div className='smallcontainer'>
-                            <div className='smallbox'></div>
-                            <div className='smallbox'></div>
+                            <div className='smallbox'>
+                                <Image className='small' src={chicken}></Image>
+                                <div className='price2'>
+                                {meatobj.chicken.name}: &nbsp;
+                                CAD${meatobj.chicken.price}
+                                </div>
+                                </div>
+                            <div className='smallbox'>
+                                <Image className='small' src={wings}></Image>
+                                <div className='price2'>
+                                {meatobj.wings.name}: &nbsp;
+                                CAD${meatobj.wings.price}
+                                </div>
+                            </div>
                         </div>
-                        <div className='bigbox'></div>
+                        <div className='bigbox text-black'>
+                                <Image className='small' src={steak}></Image>
+                                <div className='price'>
+                                {meatobj.steak.name}: &nbsp;
+                                CAD${meatobj.steak.price}
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
