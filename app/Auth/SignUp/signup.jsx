@@ -16,10 +16,10 @@ export default function signup({setCheckUser}) {
     e.preventDefault();
     if(userInfo.password == userInfo.confirmPassword){
       (async function (){
-        const habibisanidiot = await util.SignUp(userInfo.email, userInfo.password)
+        const newUser = await util.SignUp(userInfo.email, userInfo.password)
         setTimeout(()=>{window.location.replace('/home')},1000)
-        console.log('clicked')
-        }
+        console.log(newUser)
+      }
     )()}else{
       $('.PDM').css('display','flex')
     }
@@ -32,14 +32,14 @@ export default function signup({setCheckUser}) {
         <label>Email</label>
         <input type="text" onChange={handleChange} name='email' className='text text-black' />
         <label>Password</label>
-        <input type="password" onChange={handleChange} name='password' className='text text-black' />
+        <input type="password" onChange={handleChange} placeholder='At least 6 chars' name='password' className='text text-black' />
         <label>Confirm Password</label>
-        <input type="password" onChange={handleChange} name='confirmPassword' className='text text-black' />
+        <input type="password" onChange={handleChange} placeholder='At least 6 chars' name='confirmPassword' className='text text-black' />
         <button className='click' type='submit'>Sign Up</button>
         <p className='PDM'>Password doesnt match</p>
       </form>
+    <button className='pass' onClick={()=> {setCheckUser(true)}}>Already Have Account</button> 
     </div>
-        <button className='pass' onClick={()=> {setCheckUser(true)}}>Already Have Account</button>
     </div>
   )
-}
+  }

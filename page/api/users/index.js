@@ -1,3 +1,4 @@
+import signup from "@/app/Auth/SignUp/signup"
 import supabase from ".."
 
 async function getUser(){
@@ -16,12 +17,14 @@ async function LogOut(){
     let { error } = await supabase.auth.signOut()
 }
 
+
 async function SignUp(email, password){
-    let { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password
- })
-    }
+let { data, error } = await supabase.auth.signUp({
+    email: email,
+    password: password
+  })  
+  return {data, error}
+}
 
     async function providerSignUp(){
         
