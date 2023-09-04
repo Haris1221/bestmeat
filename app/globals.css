@@ -264,6 +264,9 @@ h1 {
 .mainlogin {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: white; 
+  height: 100vh;
 }
 .formdiv{
   display: flex;

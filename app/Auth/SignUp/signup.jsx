@@ -36,9 +36,9 @@ export default function signup({setCheckUser}) {
         <label>Confirm Password</label>
         <input type="password" onChange={handleChange} placeholder='At least 6 chars' name='confirmPassword' className='text text-black' />
         <button className='click' type='submit'>Sign Up</button>
+    <button className='pass' onClick={()=> {setCheckUser(true)}}>Already Have Account</button> 
         <p className='PDM'>Password doesnt match</p>
       </form>
-    <button className='pass' onClick={()=> {setCheckUser(true)}}>Already Have Account</button> 
     </div>
     </div>
   )
