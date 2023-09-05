@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import {motion} from 'framer-motion'
 import Image from 'next/image'
 import logo from '../../public/images/logo.png'
 import cart from '../../public/images/cart.png'
@@ -76,7 +77,7 @@ export default function page() {
                 <p>Recommended</p>
             </div>
             <div className='header'>
-                <div className='left'>WE PRODUCE HALAL MEAT</div>
+                <div className='left'>UNDER CONSTRUCTION</div>
                 <Image src={header} className='right' alt=''></Image>
             </div>
             <div className='section2'>

@@ -147,6 +147,7 @@ p{
   color: rgba(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
+  
 }
 .smallbox:hover {
   transform: scale(1.02);
