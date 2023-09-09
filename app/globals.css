@@ -63,6 +63,7 @@ body {
   align-items: center;
   gap: 40px;
   margin: 20px;
+  color: white;
 }
 p{
   cursor: pointer;
@@ -138,22 +139,40 @@ p{
 
 .bigbox:hover {
   transform: scale(1.02);
-  opacity: 0.8;
+  animation-duration: 100s;
+  animation-name: mymove;
+  animation-timing-function: cubic-bezier(9,9,9,9);
   .price{
     color: black;
+    animation-duration: 0.9s;
+    animation-name: example;
+    animation-timing-function: cubic-bezier(0,0,1,1);
+
   }
+}
+@keyframes example {
+  0%   {opacity: 0; }
+  100% {opacity: 1; }
+}
+@keyframes mymove {
+  0% {opacity: 0.8;}
+  100% {opacity: 1;}
 }
 .price2{
   color: rgba(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
-  
 }
 .smallbox:hover {
   transform: scale(1.02);
-  opacity: 0.8;
+  animation-duration: 100s;
+  animation-name: mymove;
+  animation-timing-function: cubic-bezier(9,9,9,9);
   .price2{
     color: white;
+    animation-duration: 0.9s;
+    animation-name: example;
+    animation-timing-function: cubic-bezier(0,0,1,1);
   }
 }
 .smallcontainer {
@@ -212,10 +231,51 @@ h1 {
 }
 .wraps {
   display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(154, 147, 147);
+  border-radius: 20px;
   width: 500px;
-  height: 130px;
-  background-color: black;
+  height: 150px;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+  justify-content: center;
 }
+.pr{
+  display: none;
+  font-size: 15px;
+}
+.wraps:hover {
+  .pr{
+    display: flex;
+    animation-duration: 0.9s;
+    animation-name: example;
+    animation-timing-function: cubic-bezier(0,0,1,1);
+  }
+}
+.name {
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+}
+.desc {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  gap: 5px;
+}
+.nn {
+  width: 100px;
+  height: auto;
+}
+.nn1 {
+  width: 100px;
+  height: 100px;
+}
+
 .footer {
   display: flex;
   padding-top: 20px;
@@ -259,7 +319,8 @@ h1 {
 }
 
 .soc {
-  width: 40px;
+  height: 30px;
+  width: auto;
   cursor: pointer;
 }
 .mainlogin {
