@@ -23,6 +23,7 @@ import chickensand from '../../public/images/chickensand.png'
 import fried from '../../public/images/fried.png'
 import lambsand from '../../public/images/lambsand.png'
 import pick from '../../public/images/pick.png'
+import Link from 'next/link'
 
 
 
@@ -100,7 +101,7 @@ export default function page() {
             </div>
             <div className='navlinks'>
                 <p>Home</p>
-                <p>Shop</p>
+                <Link href='shop'>Shop</Link> 
                 <p>Recommended</p>
             </div>
             <div className='header'>
