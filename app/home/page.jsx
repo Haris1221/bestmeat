@@ -200,14 +200,14 @@ export default function page() {
                         <div className='wraps'>
                         <p className='name'>{featuredObj.lamb.name}</p>
                             <div className='desc'>{featuredObj.lamb.description}
-                            <Image className='nn' src={lambsand}></Image>
+                            <Image className='nn1' src={pick}></Image>
                             </div>
                             <p className='pr'>CAD${featuredObj.lamb.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.pick.name}</p>
                             <div className='desc'>{featuredObj.pick.description}
-                            <Image className='nn1' src={pick}></Image>
+                            <Image className='nn' src={lambsand}></Image>
                             </div>
                             <p className='pr'>CAD${featuredObj.pick.price}</p>
                         </div>
