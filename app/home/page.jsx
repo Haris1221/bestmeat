@@ -17,12 +17,6 @@ import chicken from '../../public/images/chicken.png'
 import wings from '../../public/images/wings.png'
 import util from '../../page/api/users/index'
 import api from '../../page/api/api/index';
-import mixed from '../../public/images/mixed.png'
-import beefsand from '../../public/images/beefsand.png'
-import chickensand from '../../public/images/chickensand.png'
-import fried from '../../public/images/fried.png'
-import lambsand from '../../public/images/lambsand.png'
-import pick from '../../public/images/pick.png'
 import Link from 'next/link'
 
 
@@ -76,7 +70,6 @@ export default function page() {
             const data = await api.featured();
             setFeaturedData(data);
             setFeaturedObj({...featuredObj, mixed:{...data[0]}, beef:{...data[1]}, chicken:{...data[2]}, fried:{...data[3]}, lamb:{...data[4]}, pick:{...data[5]}})
-            console.log(featuredObj)
         }
     
         fetchFeatured();
@@ -172,42 +165,72 @@ export default function page() {
                         <div className='wraps'>
                             <p className='name'>{featuredObj.mixed.name}</p>
                             <div className='desc'>{featuredObj.mixed.description}
-                            <Image className='nn' src={mixed}></Image>
+                            <Image className='img'
+                                src={featuredObj.mixed.image}
+                                width={90}
+                                height={10}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.mixed.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.beef.name}</p>
                             <div className='desc'>{featuredObj.beef.description}
-                            <Image className='nn' src={beefsand}></Image>
+                            <Image className='imgp'
+                                src={featuredObj.beef.image}
+                                width={90}
+                                height={500}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.beef.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.chicken.name}</p>
                             <div className='desc'>{featuredObj.chicken.description}
-                            <Image className='nn' src={chickensand}></Image>
+                            <Image className='img'
+                                src={featuredObj.chicken.image}
+                                width={90}
+                                height={500}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.chicken.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.fried.name}</p>
                             <div className='desc'>{featuredObj.fried.description}
-                            <Image className='nn' src={fried}></Image>
+                            <Image className='imgp'
+                                src={featuredObj.fried.image}
+                                width={90}
+                                height={500}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.fried.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.lamb.name}</p>
                             <div className='desc'>{featuredObj.lamb.description}
-                            <Image className='nn1' src={pick}></Image>
+                            <Image className='img'
+                                src={featuredObj.lamb.image}
+                                width={90}
+                                height={100}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.lamb.price}</p>
                         </div>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.pick.name}</p>
                             <div className='desc'>{featuredObj.pick.description}
-                            <Image className='nn' src={lambsand}></Image>
+                            <Image className='img'
+                                src={featuredObj.pick.image}
+                                width={90}
+                                height={500}
+                                alt='' 
+                                />
                             </div>
                             <p className='pr'>CAD${featuredObj.pick.price}</p>
                         </div>

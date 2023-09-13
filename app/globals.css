@@ -267,6 +267,13 @@ h1 {
   padding-left: 15px;
   gap: 5px;
 }
+.desc1{
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  gap: 5px;
+  width: 200px;
+}
 .nn {
   width: 100px;
   height: auto;
@@ -354,4 +361,78 @@ h1 {
 }
 .PDM {
   display: none;
+}
+.contain {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  padding: 50px 500px 50px 500px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+
+.img {
+  width: 100px;
+  height: auto;
+}
+.imgp {
+  width: 800px;
+  height: auto;
+}
+.im {
+  width: 160px;
+  height: auto;
+}
+
+.te {
+  font-size: 15px;
+  width: 100px;
+  height: auto;
+  font-weight: 500;
+}
+.things {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.food {
+  flex-direction: row;
+  gap: 200px;
+  margin-top: 100px;
+  padding-right: 250px;
+  margin-bottom: 100px;
+}
+.foodimg {
+  background-color: rgb(7, 7, 53);
+}
+.foodDet{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-around;
+  height: 500px;
+}
+.cartButton {
+  border: 1px solid rgb(15, 15, 172);
+  border-radius: 10px;
+  background-color:  rgb(15, 15, 172);
+  width: 140px;
+  height: 50px;
+}
+.nameandprice{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+}
+.descdiv{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }

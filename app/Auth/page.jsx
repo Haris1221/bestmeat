@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import $ from 'jquery'
 import Login from './Login/login'
 import Signup from './SignUp/signup'
 

@@ -43,8 +43,18 @@ let { data: featured, error } = await supabase
     return featured
     }
 
+async function retrieveData(name){
+let { data: featured, error } = await supabase
+.from('featured')
+.select('*')
+.eq('name',name)
+return featured
+}
+
+
     export default {
         // retrieveAPI,
         meat,
         featured,
+        retrieveData,
     }
