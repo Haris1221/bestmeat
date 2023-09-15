@@ -436,3 +436,10 @@ h1 {
   align-items: flex-start;
   gap: 5px;
 }
+.up {
+  border: 1px solid black;
+  width: 40px;
+  height: 30px;
+  background-color: rgb(15, 15, 172);
+  
+}

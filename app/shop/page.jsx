@@ -55,7 +55,7 @@ export default function Page() {
     alt='' 
     />
     </Link>
-    <p className='te text-black '>$CAD {elem.price} <br/> {elem.name}</p>
+    <p className='te text-black '>$CAD {elem.price} <br/> {elem.fullname}</p>
     </div>
   })}
 </div>

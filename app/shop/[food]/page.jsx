@@ -26,22 +26,22 @@ export default function page({params}) {
     }
     const addToCart = () => {
         console.log(`Added ${quantity} ${items.name} to cart`);
-      }
-      const calculateTotalPrice = () => {
-        return (items.price * quantity).toFixed(2); 
-      };
+        }
+        const calculateTotalPrice = () => {
+            return (items.price * quantity).toFixed(2); 
+        }
     useEffect(() => {
-      async function retrieveItems() {
-          const data = await api.retrieveData(params.food);
-          setItems(data[0]);
-          console.log(data[0])
-      }
-  
-      retrieveItems();
-      }, []);
-  return (
+        async function retrieveItems() {
+            const data = await api.retrieveData(params.food);
+            setItems(data[0]);
+            console.log(data[0])
+        }
+
+        retrieveItems();
+        }, []);
+    return (
     <div className='main'>
-         <div className='nav'>
+            <div className='nav'>
                 <div className='logodiv'>
                     <Image className='logo' src={logo} alt=''></Image>
                 </div>
@@ -67,13 +67,13 @@ export default function page({params}) {
         />
         <div className='foodDet'>
             <div className='nameandprice'>
-            <p>{items.name}</p>
+            <p>{items.fullname}</p>
             <p>CAD$ {items.price}</p>
+            <div className='quan'>
             <p>Quantity</p>
-            <div>
-            <button onClick={decrementQuantity}>-</button>
+            <button className='up' onClick={decrementQuantity}>-</button>
             <span>{quantity}</span>
-            <button onClick={incrementQuantity}>+</button>
+            <button className='up' onClick={incrementQuantity}>+</button>
             </div>
             <div className='descdiv'>
             <p className='taag'>Description</p>
