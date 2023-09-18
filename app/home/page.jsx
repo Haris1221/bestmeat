@@ -162,6 +162,7 @@ export default function page() {
                 <h1>Featured items</h1>
                 </div>
                     <div className='wrapdiv'>
+                        <Link href={`/shop/${featuredObj.mixed.name}`}>
                         <div className='wraps'>
                             <p className='name'>{featuredObj.mixed.name}</p>
                             <div className='desc'>{featuredObj.mixed.description}
@@ -174,6 +175,8 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.mixed.price}</p>
                         </div>
+                        </Link>
+                        <Link href={`/shop/${featuredObj.beef.name}`}>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.beef.name}</p>
                             <div className='desc'>{featuredObj.beef.description}
@@ -186,6 +189,8 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.beef.price}</p>
                         </div>
+                        </Link>
+                        <Link href={`/shop/${featuredObj.chicken.name}`}>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.chicken.name}</p>
                             <div className='desc'>{featuredObj.chicken.description}
@@ -198,6 +203,8 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.chicken.price}</p>
                         </div>
+                        </Link>
+                        <Link href={`/shop/${featuredObj.fried.name}`}>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.fried.name}</p>
                             <div className='desc'>{featuredObj.fried.description}
@@ -210,6 +217,8 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.fried.price}</p>
                         </div>
+                        </Link>
+                        <Link href={`/shop/${featuredObj.lamb.name}`}>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.lamb.name}</p>
                             <div className='desc'>{featuredObj.lamb.description}
@@ -222,6 +231,8 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.lamb.price}</p>
                         </div>
+                        </Link>
+                        <Link href={`/shop/${featuredObj.pick.name}`}>
                         <div className='wraps'>
                         <p className='name'>{featuredObj.pick.name}</p>
                             <div className='desc'>{featuredObj.pick.description}
@@ -234,6 +245,7 @@ export default function page() {
                             </div>
                             <p className='pr'>CAD${featuredObj.pick.price}</p>
                         </div>
+                        </Link>
                     </div>
                 </div>
                 <div className='footer'>
@@ -257,3 +269,9 @@ export default function page() {
         </div>
     )
 }
+
+
+
+
+
+

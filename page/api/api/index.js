@@ -51,10 +51,21 @@ let { data: featured, error } = await supabase
 return featured
 }
 
+async function bothTables(){
+    let { data: meat, error } = await supabase
+    .from('meat')
+    .select('*')
+    let { data: featured, error1 } = await supabase
+    .from('featured')
+    .select('*')
+    return [...featured, ...meat]
+}
+
 
     export default {
         // retrieveAPI,
         meat,
         featured,
         retrieveData,
+        bothTables
     }

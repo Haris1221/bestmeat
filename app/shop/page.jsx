@@ -14,6 +14,15 @@ import mail from '../../public/images/mail.png'
 
 export default function Page() {
   const [featuredData, setFeaturedData] = useState([])
+  const [bothItems, setbothItems] = useState([])
+
+    useEffect(()=> {
+    async function fetchItems(){
+        const data = await api.bothTables()
+        setbothItems(data)
+    }
+    fetchItems()
+  },[])
   
   useEffect(() => {
     async function fetchFeatured() {
@@ -44,20 +53,20 @@ export default function Page() {
                 <p>Recommended</p>
             </div>
             <div className='contain'>
-  {featuredData.map((elem, i) => {
-    console.log(elem.image)
-    return <div className='things'>
-    <Link href={`shop/${elem.name}`}>
-    <Image key={i} className='im'
-    src={elem.image}
-    width={100}
-    height={500}
-    alt='' 
+    {bothItems.map((elem, i) => {
+        console.log(elem.image)
+        return <div className='things'>
+        <Link href={`shop/${elem.name}`}>
+        <Image key={i} className='im'
+        src={elem.image}
+        width={100}
+        height={500}
+        alt='' 
     />
     </Link>
     <p className='te text-black '>$CAD {elem.price} <br/> {elem.fullname}</p>
     </div>
-  })}
+    })}
 </div>
 <div className='footer'>
                     <div className='split'>

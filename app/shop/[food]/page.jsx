@@ -30,15 +30,19 @@ export default function page({params}) {
         const calculateTotalPrice = () => {
             return (items.price * quantity).toFixed(2); 
         }
-    useEffect(() => {
-        async function retrieveItems() {
-            const data = await api.retrieveData(params.food);
-            setItems(data[0]);
-            console.log(data[0])
-        }
-
-        retrieveItems();
-        }, []);
+        useEffect(()=> {
+            async function fetchItems(){
+                const data = await api.bothTables(params.food)
+                console.log(data)
+                const da = data.find(elem => {
+                return elem.name == params.food
+                })
+                console.log(da)
+                setItems(da)
+        
+            }
+            fetchItems()
+          },[])
     return (
     <div className='main'>
             <div className='nav'>
