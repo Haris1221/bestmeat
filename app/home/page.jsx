@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import logo from '../../public/images/logo.png'
-import cart from '../../public/images/cart.png'
-import search from '../../public/images/search.png'
 import header from '../../public/images/header.png'
 import insta from '../../public/images/insta.png'
 import twit from '../../public/images/twit.png'
@@ -80,27 +78,10 @@ export default function page() {
 
     return (
         <div className='main'>
-            <div className='nav'>
-                <div className='logodiv'>
-                    <Image className='logo' src={logo} alt=''></Image>
-                </div>
-                <div className='input'>
-                    <Image className='cart' src={cart} alt=''></Image>
-                    <div className='searchdiv'>
-                        <Image  className='searchimg' src={search} alt=''></Image>
-                        <input className='se' placeholder='Search'></input>
-                    </div>
-                </div>
-            </div>
-            <div className='navlinks'>
-                <p>Home</p>
-                <Link href='shop'>Shop</Link> 
-                <p>Recommended</p>
-            </div>
             <div className='header'>
-                <div className='left'>UNDER CONSTRUCTION</div>
-                <Image src={header} className='right' alt=''></Image>
-            </div>
+    <div className='left'>UNDER CONSTRUCTION</div>
+    <Image src={header} className='right' alt=''></Image>
+</div>
             <div className='section2'>
                 <h1>Recommended</h1>
                 <div className='container'>

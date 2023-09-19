@@ -47,6 +47,7 @@ body {
   align-items: center;
   gap: 30px;
   padding: 50px 50px;
+  position: relative;
 }
 .searchdiv {
   display: flex;
@@ -442,4 +443,31 @@ h1 {
   height: 30px;
   background-color: rgb(15, 15, 172);
   
+}
+.popup {
+  display: flex;
+  width: 300px;
+  color: black;
+  flex-direction: column;
+}
+
+.pop {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-height: 100px;
+
+} 
+.cartt {
+  font-size: 10px;
+  padding: 20px;
+}
+.rows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

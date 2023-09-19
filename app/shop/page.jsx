@@ -35,23 +35,6 @@ export default function Page() {
   
   return (
   <div className='main'>
-    <div className='nav'>
-                <div className='logodiv'>
-                    <Image className='logo' src={logo} alt=''></Image>
-                </div>
-                <div className='input'>
-                    <Image className='cart' src={cart} alt=''></Image>
-                    <div className='searchdiv'>
-                        <Image  className='searchimg' src={search} alt=''></Image>
-                        <input className='se' placeholder='Search'></input>
-                    </div>
-                </div>
-            </div>
-            <div className='navlinks'>
-            <Link href='home'>Home</Link> 
-                <Link href='shop'>Shop</Link> 
-                <p>Recommended</p>
-            </div>
             <div className='contain'>
     {bothItems.map((elem, i) => {
         console.log(elem.image)

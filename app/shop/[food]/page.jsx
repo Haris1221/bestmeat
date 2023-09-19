@@ -1,11 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react';
 import api from '../../../page/api/api/index'
+import util from '../../../page/api/cart/index'
 import Image from 'next/image';
 import logo from '../../../public/images/logo.png'
-import cart from '../../../public/images/cart.png'
-import search from '../../../public/images/search.png'
-import Link from 'next/link';
 import insta from '../../../public/images/insta.png'
 import twit from '../../../public/images/twit.png'
 import face from '../../../public/images/face.png'
@@ -14,6 +12,7 @@ import mail from '../../../public/images/mail.png'
 export default function page({params}) {
     const [items, setItems] = useState([])
     const [quantity, setQuantity] = useState(1)
+
 
     const incrementQuantity = () => {
         setQuantity(quantity + 1);
@@ -24,20 +23,18 @@ export default function page({params}) {
             setQuantity(quantity - 1);
         }
     }
-    const addToCart = () => {
-        console.log(`Added ${quantity} ${items.name} to cart`);
-        }
+    async function addToCart(item) {
+        const add = await util.updateCart(item, quantity)
+    }
         const calculateTotalPrice = () => {
             return (items.price * quantity).toFixed(2); 
         }
         useEffect(()=> {
             async function fetchItems(){
                 const data = await api.bothTables(params.food)
-                console.log(data)
                 const da = data.find(elem => {
                 return elem.name == params.food
                 })
-                console.log(da)
                 setItems(da)
         
             }
@@ -45,23 +42,6 @@ export default function page({params}) {
           },[])
     return (
     <div className='main'>
-            <div className='nav'>
-                <div className='logodiv'>
-                    <Image className='logo' src={logo} alt=''></Image>
-                </div>
-                <div className='input'>
-                    <Image className='cart' src={cart} alt=''></Image>
-                    <div className='searchdiv'>
-                        <Image  className='searchimg' src={search} alt=''></Image>
-                        <input className='se' placeholder='Search'></input>
-                    </div>
-                </div>
-            </div>
-            <div className='navlinks'>
-            <Link href='home'>Home</Link> 
-                <Link href='shop'>Shop</Link> 
-                <p>Recommended</p>
-            </div>
     <div className='food flex justify-end '>
         <Image className='foodimg'
         src={items.image}
@@ -84,7 +64,7 @@ export default function page({params}) {
             <p className='desc1'>{items.description}</p>
             </div>
             </div>
-            <button className='cartButton' onClick={addToCart}>ADD TO CART $CAD{calculateTotalPrice()}</button>
+            <button className='cartButton' onClick={() => addToCart(items)}>ADD TO CART $CAD{calculateTotalPrice()}</button>
         </div>
     </div>
     <div className='footer'>
