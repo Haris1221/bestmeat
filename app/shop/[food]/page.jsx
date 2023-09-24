@@ -25,6 +25,9 @@ export default function page({params}) {
     }
     async function addToCart(item) {
         const add = await util.updateCart(item, quantity)
+        setTimeout(()=>{
+            window.location.reload()
+        }, 100)
     }
         const calculateTotalPrice = () => {
             return (items.price * quantity).toFixed(2); 
@@ -53,18 +56,12 @@ export default function page({params}) {
             <div className='nameandprice'>
             <p>{items.fullname}</p>
             <p>CAD$ {items.price}</p>
-            <div className='quan'>
-            <p>Quantity</p>
-            <button className='up' onClick={decrementQuantity}>-</button>
-            <span>{quantity}</span>
-            <button className='up' onClick={incrementQuantity}>+</button>
-            </div>
             <div className='descdiv'>
             <p className='taag'>Description</p>
             <p className='desc1'>{items.description}</p>
             </div>
             </div>
-            <button className='cartButton' onClick={() => addToCart(items)}>ADD TO CART $CAD{calculateTotalPrice()}</button>
+            <button className='cartButton' onClick={() => addToCart(items)}>ADD TO CART</button>
         </div>
     </div>
     <div className='footer'>

@@ -11,20 +11,38 @@ import { useState, useEffect } from 'react'
 
 export default function menu() {
     const [cartItem, setCartItem] = useState([]);
+    const [i, setI] = useState(0)
+    const [quantity, setQuantity] = useState(1)
+
+
+    const incrementQuantity = () => {
+        setQuantity(quantity + 1);
+        };
+    
+        const decrementQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    }
 
 useEffect(()=> {
     async function retreiveCart(){
         const data = await api.readCart()
         setCartItem(data);
-        console.log(cartItem)
     }
     retreiveCart();
-}, []);
+}, [i]);
 
 
     function onClick(e){
         e.preventDefault()
-        $('.popup').toggle()
+        $('.pop').toggle()
+        console.log('click')
+    }
+
+    async function handleClick(e){
+        const remove = await api.deleteFromCart(e.target.name)
+        setI(1)
     }
 
     return (
@@ -39,9 +57,9 @@ useEffect(()=> {
             <Image  className='searchimg' src={search} alt=''></Image>
             <input className='se' placeholder='Search'></input>
             <div className='pop'>
-        {cartItem.map((elem, i) => {
+        {cartItem.length==0 ? <div className='div flex justify-center items-center text-black w-full'>No items</div> : cartItem.map((elem, i) => {
+
             return <div className='popup bg-white z-20'>
-    <div className='rows'>
             <Image key={i} 
         src={elem.image}
         width={70}
@@ -49,8 +67,14 @@ useEffect(()=> {
         alt='' 
     />
     <p className='cartt'>{elem.name}</p>
-    <p className='cartt'>{elem.price}</p>
+    <p className='cartt'>{elem.price * quantity}</p>
+    <div className='quan'>
+            <p className='qu text-xs'>Quantity</p>
+            <button className='up' onClick={decrementQuantity}>-</button>
+            <span>{quantity}</span>
+            <button className='up' onClick={incrementQuantity}>+</button>
     </div>
+    <button name={elem.name} onClick={handleClick}>X</button>
         </div>
 })}
         </div>

@@ -26,11 +26,14 @@ async function readCart(){
 async function deleteFromCart(name){
     const user = await api.getUser()
     const read = await readCart()
-    const itemName = read.filter(elem => elem.name == name)
+    const itemName = read.filter((elem) =>{
+        return elem.name != name
+    } )
+    console.log(itemName)
     const { data, error } = await supabase
     .from('cart')
     .update({ shoppingcart: itemName})
-    .eq('user_id', id)
+    .eq('user_id', user.id)
     .select()
 
 }
