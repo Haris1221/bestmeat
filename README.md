@@ -11,7 +11,7 @@ what has been used for this website:
 
 Screenshots:
 
-![alt text](./bestmeat/public/images/sc1.png) 
+![alt text](./idiot/bestmeat/public/images/sc1.png) 
 ![alt text](./sc2.png) 
 ![alt text](./sc3.png) 
 ![alt text](./sc4.png) 
