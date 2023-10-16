@@ -58,7 +58,6 @@ export default function Page() {
                         <div className='navlinks2'>
                             <p className='tag'>Home</p>
                             <p className='tag'>Shop</p>
-                            <p className='tag'>Recommended</p>
                         </div>
                     </div>
                         <div className='socials'>

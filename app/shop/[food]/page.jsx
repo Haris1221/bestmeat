@@ -14,24 +14,14 @@ export default function page({params}) {
     const [quantity, setQuantity] = useState(1)
 
 
-    const incrementQuantity = () => {
-        setQuantity(quantity + 1);
-        };
-    
-        const decrementQuantity = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    }
+
     async function addToCart(item) {
         const add = await util.updateCart(item, quantity)
         setTimeout(()=>{
             window.location.reload()
         }, 100)
     }
-        const calculateTotalPrice = () => {
-            return (items.price * quantity).toFixed(2); 
-        }
+
         useEffect(()=> {
             async function fetchItems(){
                 const data = await api.bothTables(params.food)
@@ -71,7 +61,6 @@ export default function page({params}) {
                         <div className='navlinks2'>
                             <p className='tag'>Home</p>
                             <p className='tag'>Shop</p>
-                            <p className='tag'>Recommended</p>
                         </div>
                     </div>
                         <div className='socials'>

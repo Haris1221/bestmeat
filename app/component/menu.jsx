@@ -57,8 +57,10 @@ useEffect(()=> {
             <Image  className='searchimg' src={search} alt=''></Image>
             <input className='se' placeholder='Search'></input>
             <div className='pop'>
-        {cartItem.length==0 ? <div className='div flex justify-center items-center text-black w-full'>No items</div> : cartItem.map((elem, i) => {
-
+        {cartItem.length==0 ? <div className='div flex justify-center items-center text-black w-full'>No items</div>
+            : 
+            cartItem.filter((elem, i) => cartItem.findIndex((item) => item.name === elem.name) === i).map((elem, i) => {
+                
             return <div className='popup bg-white z-20'>
             <Image key={i} 
         src={elem.image}
@@ -84,7 +86,6 @@ useEffect(()=> {
 <div className='navlinks'>
     <Link href='/home'>Home</Link>
     <Link href='/shop'>Shop</Link> 
-    <p>Recommended</p>
 </div>
     </div>
     )
