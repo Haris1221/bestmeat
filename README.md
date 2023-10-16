@@ -11,7 +11,7 @@ what has been used for this website:
 
 Screenshots:
 
-![alt text]('./public/images/sc1.png) 
+![Alt Text]('./public/images/sc1.png) 
 ![alt text]('./public/images/sc2.png) 
 ![alt text]('./public/images/sc3.png) 
 ![alt text]('./public/images/sc4.png) 
